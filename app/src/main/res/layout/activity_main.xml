@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/food_main"
+    tools:context="com.aa.aa.yg.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A0000000"
+        >
+
+        <LinearLayout
+            android:id="@+id/logo"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hungryrise"
+                android:textSize="57sp"
+                android:gravity="center_horizontal"
+                android:fontFamily="cursive"
+                android:textColor="#fff"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="70dp"
+            android:layout_below="@id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <info.hoang8f.widget.FButton
+                android:id="@+id/signIn"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sign in"
+                app:buttonColor="#cf1706"
+                app:shadowColor="#000"
+                app:shadowHeight="7dp"
+                app:cornerRadius="4dp"
+                />
+            <info.hoang8f.widget.FButton
+                android:layout_marginTop="20dp"
+                android:id="@+id/signUp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sign up"
+                app:buttonColor="#f1a714"
+                app:shadowColor="#000"
+                app:shadowHeight="7dp"
+                app:cornerRadius="4dp"
+
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>
