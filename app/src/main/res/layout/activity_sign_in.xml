@@ -24,6 +24,7 @@
             android:textSize="48dp"
             android:fontFamily="cursive"
             android:hint="phone number"
+            android:textColor="#fff"
             android:textColorHint="#fff"
             android:textAlignment="center"
             android:inputType="number"
@@ -38,14 +39,14 @@
             android:id="@+id/passWord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+                   android:textColor="#fff"
             android:background="@drawable/custom_editext"
             android:textSize="48dp"
             android:fontFamily="cursive"
             android:hint="password"
             android:textColorHint="#fff"
             android:textAlignment="center"
-            android:inputType="number"
+            android:inputType="textPassword"
             />
 
         <LinearLayout

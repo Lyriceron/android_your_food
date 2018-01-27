@@ -46,36 +46,41 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final ProgressDialog mDialog = new ProgressDialog(SignInActivity.this);
-                mDialog.setMessage("Please waiting...");
-                mDialog.show();
+                if(edtPhone.getText().toString().isEmpty() || edtPassword.getText().toString().isEmpty()){
+                    Toast.makeText(SignInActivity.this, "Empty phone number or password !", Toast.LENGTH_SHORT).show();
+                } else {
 
-                table_user.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                    final ProgressDialog mDialog = new ProgressDialog(SignInActivity.this);
+                    mDialog.setMessage("Please waiting...");
+                    mDialog.show();
 
-                        //check if user not exist in database
-                        if(dataSnapshot.child(edtPhone.getText().toString()).exists()) {
+                    table_user.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
 
-                            mDialog.dismiss();
+                            //check if user not exist in database
+                            if (dataSnapshot.child(edtPhone.getText().toString()).exists()) {
 
-                            User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
-                            if (user.getPassword().equals(edtPassword.getText().toString())) {
-                                Toast.makeText(SignInActivity.this, "Sign in successfully !", Toast.LENGTH_SHORT).show();
+                                mDialog.dismiss();
+
+                                User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
+                                if (user.getPassword().equals(edtPassword.getText().toString())) {
+                                    Toast.makeText(SignInActivity.this, "Sign in successfully !", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(SignInActivity.this, "Wrong password !", Toast.LENGTH_SHORT).show();
+                                }
                             } else {
-                                Toast.makeText(SignInActivity.this, "Sign in failed !!!", Toast.LENGTH_SHORT).show();
+                                mDialog.dismiss();
+                                Toast.makeText(SignInActivity.this, "User not exist !", Toast.LENGTH_SHORT).show();
                             }
-                        } else {
-                            mDialog.dismiss();
-                            Toast.makeText(SignInActivity.this, "User not exist !", Toast.LENGTH_SHORT).show();
                         }
-                    }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
 
-                    }
-                });
+                        }
+                    });
+                }
             }
         });
     }
