@@ -10,10 +10,89 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#A0000000"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            >
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edtPhone"
+                android:hint="Phone Number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/white"
+                android:textSize="34sp"
+                android:inputType="phone"
+                android:text="0988123388"
+                app:met_baseColor="@android:color/white"
+                app:met_floatingLabel="highlight"
+                app:met_maxCharacters="11"
+                app:met_primaryColor="@android:color/white"
+                app:met_singleLineEllipsis="true"
+                />
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/customerName"
+                android:hint="Customer Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/white"
+                android:textSize="34sp"
+                android:inputType="text"
+                android:text="Anh Thảo"
+                app:met_baseColor="@android:color/white"
+                app:met_floatingLabel="highlight"
+                app:met_maxCharacters="11"
+                app:met_primaryColor="@android:color/white"
+                app:met_singleLineEllipsis="true"
+                />
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/passWord"
+                android:hint="Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/white"
+                android:textSize="34sp"
+                android:inputType="textPassword"
+                android:text="1234"
+                app:met_baseColor="@android:color/white"
+                app:met_floatingLabel="highlight"
+                app:met_maxCharacters="11"
+                app:met_primaryColor="@android:color/white"
+                app:met_singleLineEllipsis="true"
+                />
+
+        </LinearLayout>
+
 
 
 
     </RelativeLayout>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/btnSignUp"
+        android:text="sign up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        app:buttonColor="#427e30"
+        android:shadowColor="@android:color/black"
+        app:shadowEnabled="true"
+        app:shadowHeight="5dp"
+        app:cornerRadius="4dp"
+        />
 
 </RelativeLayout>
