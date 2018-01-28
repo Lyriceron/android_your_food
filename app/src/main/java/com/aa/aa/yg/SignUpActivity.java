@@ -1,11 +1,17 @@
 package com.aa.aa.yg;
 
 import android.app.ProgressDialog;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AbsListView;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.aa.aa.yg.Model.User;
@@ -16,10 +22,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+import static com.aa.aa.yg.R.id.rlt;
+
 public class SignUpActivity extends AppCompatActivity {
 
     MaterialEditText edtPhone, edtName, edtPassword;
     Button btnSignUp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +42,9 @@ public class SignUpActivity extends AppCompatActivity {
         edtPhone = (MaterialEditText) findViewById(R.id.edtPhone);
         edtName = (MaterialEditText) findViewById(R.id.customerName);
         edtPassword = (MaterialEditText) findViewById(R.id.passWord);
-
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
+
+
 
         //init firebase
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -82,5 +93,13 @@ public class SignUpActivity extends AppCompatActivity {
                 || edtPassword.getText().toString().isEmpty()
                 || edtName.getText().toString().isEmpty()) return true;
         return false;
+    }
+    private int getHeightNavigationBar(){
+        Resources resources = this.getResources();
+        int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            return resources.getDimensionPixelSize(resourceId);
+        }
+        return 0;
     }
 }

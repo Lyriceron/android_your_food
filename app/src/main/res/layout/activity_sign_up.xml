@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rlt"
     android:background="@drawable/food_main"
+
     tools:context="com.aa.aa.yg.SignUpActivity">
 
     <RelativeLayout
@@ -71,28 +73,23 @@
                 app:met_singleLineEllipsis="true"
                 />
 
+            <info.hoang8f.widget.FButton
+                android:id="@+id/btnSignUp"
+                android:text="sign up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:textColor="@android:color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="8dp"
+                app:buttonColor="#427e30"
+                android:shadowColor="@android:color/black"
+                app:shadowEnabled="true"
+                app:shadowHeight="5dp"
+                app:cornerRadius="4dp"
+                />
+
         </LinearLayout>
-
-
-
-
     </RelativeLayout>
-
-    <info.hoang8f.widget.FButton
-        android:id="@+id/btnSignUp"
-        android:text="sign up"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        android:textColor="@android:color/white"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="8dp"
-        app:buttonColor="#427e30"
-        android:shadowColor="@android:color/black"
-        app:shadowEnabled="true"
-        app:shadowHeight="5dp"
-        app:cornerRadius="4dp"
-        />
-
 </RelativeLayout>
